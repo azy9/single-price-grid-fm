@@ -3,24 +3,26 @@ html{
   box-sizing: border-box;
   background: hsl(204, 43%, 93%);
   font-size: 16px;
-  padding: 20px;
+  padding: 30px;
 }
 *, *:before, *:after{
   box-sizing: inherit;
 }
 #maincont{
-  margin: 0 auto;
   box-shadow: 4px 4px 7px 3px rgba(0,0,0,0.25);
   border-radius: 10px;
   overflow: hidden;
+}
+h4, h3, p, ul{
+  color: hsl(204, 43%, 93%);
+  opacity: 0.95;
+  margin: 0;
+  margin-bottom: 20px;
 }
 #top{
   padding: 20px;
   background: white;
   height: 45%;
-}
-#bottom{
-  height: 55%;
 }
 #top h3{
   color: hsl(179, 77%, 45%);
@@ -34,16 +36,17 @@ html{
   color: hsl(71, 73%, 54%);
   margin-bottom: 15px;
 }
-h4, h3, p, ul{
-  color: hsl(204, 43%, 93%);
-  opacity: 0.95;
-  margin: 0;
-  margin-bottom: 20px;
+#bottom{
+  height: 55%;
+  display: flex;
+  flex-direction: column;
 }
-#left-box, #right-box{
-  width: auto;
-  height: auto;
+#right-box, #left-box{
   padding: 20px;
+  flex-basis: 50%;
+}
+#right-box{
+  background: hsl(179, 77%, 45%);
 }
 #left-box{
   background: hsl(179, 62%, 43%);
@@ -68,14 +71,6 @@ h4, h3, p, ul{
   margin-bottom: 30px;
   font-size: 0.9rem;
 }
-#right-box{
-  background: hsl(179, 77%, 45%);
-}
-ul{
-  padding: 0;
-  list-style: none;
-  font-size: 0.9rem;
-}
 #sbtn{
  height: 35px;
  width: 100%;
@@ -88,15 +83,18 @@ ul{
 button:hover{
   cursor: pointer;
 }
+ul{
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
 @media(min-width: 576px){
   #maincont{
   width: 550px;
   height: 400px;
   }
-  #left-box, #right-box{
-  width: 50%;
-  height:100%;
-  float: left;
-  
-  }
+  #bottom{
+    flex-direction: row;  
+ } 
 }
